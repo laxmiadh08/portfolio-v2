@@ -18,7 +18,7 @@ I enjoy solving business problems through data visualization, automation, and pr
 
 <div class="card">
 
-<img src="/images/env-health/home.png">
+<img src="images/env-health/home.png">
 
 <div class="card-detail">
 <h3> Environmental Health Monitoring</h3>
