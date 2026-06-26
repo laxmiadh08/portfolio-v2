@@ -1007,31 +1007,48 @@ a:hover {
   background-color: #c2c21b !important;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 120px 20px;
+  padding: 20px 20px;
   height: 40px;
+}
+
+.page-header .btn {
+  display: none !important;
 }
 
 /* CONTENT WIDTH */
 .main-content {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: auto;
+  padding: 2rem;
+  color: #333333;
+}
+.main-content h1,
+.main-content h2,
+.main-content h3,
+.main-content h4,
+.main-content h5,
+.main-content h6 {
+  color: #333333;
 }
 
 /* BUTTONS */
+h3 {
+  font-weight: 700;
+}
+
 .button-row {
   margin: 30px 0;
 }
 
-.btn {
+.btn-link {
   display: inline-block;
-  margin-right: 12px;
-  margin-bottom: 10px;
-  padding: 12px 22px;
-  border-radius: 8px;
-  background: rgba(113, 177, 233, 0.1137254902);
+  margin: 8px;
+  padding: 10px 18px;
+  background: #26afd9;
   color: white;
   text-decoration: none;
-  font-weight: bold;
+  text-align: center;
+  border-radius: 6px;
 }
 
 .btn:hover {
@@ -1083,8 +1100,9 @@ pre {
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+  text-decoration: none;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
 }
 
 .project-card h3 {
@@ -1101,6 +1119,76 @@ pre {
 .tags {
   font-size: 12px;
   color: #666;
+}
+
+.info-card {
+  display: block;
+  padding: 18px 20px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  text-decoration: none;
+  color: #111;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+/* CARD */
+.card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  margin: 0;
+  border-radius: 0;
+}
+
+.project-button {
+  display: block;
+  margin: 8px;
+  padding: 10px 18px;
+  background: #3c77d4;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 6px;
+}
+
+.project-button:hover {
+  background: #50d4e0;
+}
+
+.card-detail {
+  padding: 12px;
+  background: #ffffff;
+}
+
+.card h3 {
+  font-weight: 600;
+  padding: 0 8px;
+  margin: 0 !important;
+}
+
+.card p {
+  padding: 8px;
+  margin: 0 !important;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -4,6 +4,9 @@ layout: default
 permalink: /projects/environmental-health/
 ---
 <style> 
+.page-header{
+    display:none;
+}
 .project-header { background-image: url("/images/env-health/home.png"); background-size: cover; background-position: center; 
 height: 280px;
 width:100%;
