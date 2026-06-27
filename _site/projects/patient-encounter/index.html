@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.9.0 -->
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/projects/patient-encounter/" />
+<meta property="og:url" content="http://localhost:4000/projects/patient-encounter/" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","url":"http://localhost:4000/projects/patient-encounter/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    <header class="page-header" role="banner">
+      <h1 class="project-name"></h1>
+      <h2 class="project-tagline"></h2>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <style> 
+.page-header{
+    display:none;
+}
+.project-header { background-image: url("/images/price-transparency/Overview.jpg"); background-size: cover; background-position: center; 
+height: 280px;
+width:100%;
+border-radius: 10px; margin-bottom: 25px; 
+position: relative; }
+.back-home { display: inline-block;
+ margin: 20px 0; 
+ padding: 10px 16px; 
+ background: #FF7B00;
+color: #ffffff;
+color: white; text-decoration: none; border-radius: 6px; font-weight: bold; } 
+
+
+.metrics-grid {
+    display: grid;
+    gap: 16px;
+    margin: 2rem 0;
+    grid-auto-flow: column
+}
+
+.metric-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap:wrap;
+    padding: 18px 24px;
+
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+
+    transition: all .2s ease;
+}
+
+/* .metric-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0,0,0,.08);
+} */
+
+.metric-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #555;
+    font-weight: 500;
+}
+
+.metric-card h3 {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0f172a;
+    white-space: nowrap;
+}
+.project-title{
+    font-weight:900;
+    font-size:36px;
+    margin:8px 0 !important;
+}
+.project-tech{
+    margin:4px 0px!important;
+}
+
+
+</style>
+
+<p><a class="back-home" href="/">← Back to Home</a></p>
+
+<section class="project-content">
+
+<h1>Hospital Operations &amp; Patient Analytics</h1>
+
+<p class="project-tech">
+SQL • Healthcare Analytics • Data Exploration • Relational Database
+</p>
+
+<p class="lead">
+Analyzed a hospital database containing over <strong>75,000 records</strong> using SQL to uncover operational, financial, and clinical insights related to patient encounters, insurance coverage, procedure costs, and readmission patterns.
+</p>
+
+<div class="project-highlight">
+<p>
+Healthcare organizations generate large volumes of operational data that can be used to improve patient outcomes and financial performance. This project applies SQL-based analytics to identify utilization trends, quantify uncompensated care, evaluate procedure costs, and analyze readmission behavior to support data-driven decision making.
+</p>
+</div>
+
+</section>
+
+<section>
+
+<h2>Project Overview</h2>
+
+<p>
+The analysis explores multiple aspects of hospital operations using relational SQL queries across patient, encounter, payer, and procedure datasets.
+</p>
+
+<div class="metrics-grid">
+
+<div class="metric-card">
+<p>Records Analyzed</p>
+<h3>75K+</h3>
+</div>
+
+<div class="metric-card">
+<p>Database</p>
+<h3>Hospital</h3>
+</div>
+
+<div class="metric-card">
+<p>Primary Tool</p>
+<h3>SQL</h3>
+</div>
+
+<div class="metric-card">
+<p>30-Day Readmissions</p>
+<h3>771</h3>
+</div>
+
+<div class="metric-card">
+<p>Uninsured Encounters</p>
+<h3>48.7%</h3>
+</div>
+
+<div class="metric-card">
+<p>Analysis Areas</p>
+<h3>6</h3>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Analysis Areas</h2>
+
+<ul>
+<li>Encounter volume trends and length of stay</li>
+<li>Insurance coverage and uncompensated care</li>
+<li>Procedure cost analysis</li>
+<li>Patient utilization and readmission patterns</li>
+<li>Demographic analysis by age and gender</li>
+<li>Cost-per-encounter by service line</li>
+</ul>
+
+</section>
+
+<section>
+
+<h2>Encounter Volume Analysis</h2>
+
+<p>
+The first analysis examined encounter volume over time. SQL aggregation queries were used to calculate annual encounter totals and classify encounters into ambulatory, outpatient, wellness, urgent care, emergency, and inpatient categories. Percentages were then calculated to understand how the hospital's service mix changed over time.
+</p>
+
+<img src="/images/1.overview1_sql.png" alt="Encounter Overview SQL" class="project-image" />
+
+<img src="/images/1.overview_result.png" alt="Encounter Overview Results" class="project-image" />
+
+</section>
+
+<section>
+
+<h2>Insurance Coverage &amp; Cost Analysis</h2>
+
+<p>
+Insurance coverage was analyzed by calculating the proportion of encounters with zero payer reimbursement. The analysis found that nearly half of all encounters received no payer coverage, representing a substantial uncompensated care burden.
+</p>
+
+<div class="metrics-grid">
+
+<div class="metric-card">
+<p>Zero Coverage Rate</p>
+<h3>48.7%</h3>
+</div>
+
+<div class="metric-card">
+<p>Uncovered Encounters</p>
+<h3>13,586</h3>
+</div>
+
+<div class="metric-card">
+<p>Total Encounters</p>
+<h3>27,891</h3>
+</div>
+
+</div>
+
+<p>
+Additional SQL joins between encounters and payer tables identified average claim costs by insurance provider. Medicaid and uninsured patients generated the highest average claim costs.
+</p>
+
+<img src="/images/1.cost_coverage_sql.png" alt="Insurance Coverage SQL" class="project-image" />
+
+<img src="/images/1.cost_coverage_result.png" alt="Insurance Coverage Results" class="project-image" />
+
+</section>
+
+<section>
+
+<h2>Procedure Cost Analysis</h2>
+
+<p>
+Procedure data was analyzed from two perspectives: the most frequently performed procedures and the most expensive procedures based on average cost. This approach highlights both operational volume and financial impact.
+</p>
+
+<div class="project-highlight">
+<p>
+The most expensive procedure identified was <strong>Admit to ICU</strong>, with an average cost nearly four times higher than the second most expensive procedure, <strong>Coronary Artery Bypass</strong>.
+</p>
+</div>
+
+</section>
+
+<section>
+
+<h2>Patient Behavior &amp; Readmission Analysis</h2>
+
+<p>
+Patient utilization patterns were evaluated using quarterly admission trends. SQL window functions were then used to identify each patient's next encounter and determine whether a readmission occurred within 30 days.
+</p>
+
+<p>
+The analysis was extended to compare traditional 30-day readmissions with a broader 90-day window, identifying additional patients who would not be captured using the standard healthcare quality metric.
+</p>
+
+<img src="/images/1.readmission_sql.png" alt="Readmission SQL" class="project-image" />
+
+<img src="/images/1.readmission2_sql.png" alt="Readmission Results" class="project-image" />
+
+</section>
+
+<section>
+
+<h2>Demographic Readmission Analysis</h2>
+
+<p>
+Readmission records were joined with patient demographic information to evaluate risk across age groups and gender. Patients were grouped into age bands (0–17, 18–40, 41–60, 61–80, and 80+) to identify populations with elevated readmission rates.
+</p>
+
+<img src="/images/1.demo_sql.png" alt="Demographic Analysis SQL" class="project-image" />
+
+</section>
+
+<section>
+
+<h2>Cost Per Encounter by Service Line</h2>
+
+<p>
+The final analysis calculated average billed cost, payer coverage, uncompensated cost, and coverage percentage for each encounter class. This financial breakdown identifies which service lines generate the greatest financial risk for the hospital.
+</p>
+
+<img src="/images/1.coverage_sql.png" alt="Coverage SQL" class="project-image" />
+
+</section>
+
+<section>
+
+<h2>Key Insights</h2>
+
+<div class="insight-card">
+
+<h3>Outpatient-Focused Hospital</h3>
+
+<p>
+Approximately <strong>95.9%</strong> of all encounters lasted less than 24 hours, indicating that the hospital primarily delivers outpatient and same-day care.
+</p>
+
+</div>
+
+<div class="insight-card">
+
+<h3>High Uncompensated Care Burden</h3>
+
+<p>
+Nearly half of all encounters (48.7%) received no payer coverage, highlighting a significant financial challenge associated with uncompensated care.
+</p>
+
+</div>
+
+<div class="insight-card">
+
+<h3>Readmission Risk</h3>
+
+<p>
+A total of <strong>771 patients</strong> returned within 30 days, with a small group of high-utilization patients accounting for a disproportionate share of readmissions.
+</p>
+
+</div>
+
+<div class="insight-card">
+
+<h3>Procedure Cost Variation</h3>
+
+<p>
+ICU admissions were substantially more expensive than all other procedures, emphasizing the financial impact of critical care services.
+</p>
+
+</div>
+
+<div class="insight-card">
+
+<h3>Extended Monitoring</h3>
+
+<p>
+Expanding the readmission window from 30 to 90 days identified additional at-risk patients who would not be captured under the standard quality metric.
+</p>
+
+</div>
+
+<div class="insight-card">
+
+<h3>Financial Performance</h3>
+
+<p>
+Inpatient encounters generated the highest average uncompensated cost per service line, making them the largest contributor to financial risk.
+</p>
+
+</div>
+
+</section>
+
+
+      <footer class="site-footer">
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </main>
+  </body>
+</html>

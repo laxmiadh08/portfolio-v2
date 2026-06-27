@@ -5,11 +5,19 @@ permalink: /
 ---
 
 
-<div >
-<h1> Laxmi Adhikari </h1>
-I am a Data Analyst with experience in SQL, Python, Power BI, PostgreSQL, ETL development, and business intelligence.
-
-I enjoy solving business problems through data visualization, automation, and predictive analytics.
+<div>
+<p class="name"> Laxmi Adhikari </p>
+<p class="about">
+I enjoy making sense of complex information and finding patterns. My background in business analysis, ux design, and Business Analytics has shaped a structured and detail-oriented approach to problem solving. I genuinely enjoy exploring data, not just at work, but also through reports and research about the world around us. Outside of analytics, hiking is my favorite way to disconnect and recharge in nature.
+</p>
+<!-- <div class="tech-stack">
+    <span class="tech-tag">SQL</span>
+    <span class="tech-tag">Power BI</span>
+    <span class="tech-tag">DAX</span>
+    <span class="tech-tag">Data Modeling</span>
+    <span class="tech-tag">Excel</span>
+    <span class="tech-tag">Python</span>
+</div> -->
 </div>
 
 <h2>Featured Projects</h2>
@@ -18,48 +26,68 @@ I enjoy solving business problems through data visualization, automation, and pr
 
 <div class="card">
 
-<img src="images/env-health/home.png">
+<img src="images/price-transparency/price-thumb.png">
 
 <div class="card-detail">
-<h3> Environmental Health Monitoring</h3>
+<h3> Healthcare Pricing Disparities</h3>
+<p>Analyzed negotiated rates, cash prices, and gross charges across 3 major hospitals in Louisville, KY </p>
 
-<p>Real-time ETL dashboard using APIs.</p>
-
-<a class="project-button" href="/projects/environmental-health">View Project →</a>
+<a class="project-button" href="/projects/price-transparency">View Project →</a>
+<div class="tech-stack">
+    <span class="tech-tag">Power BI</span>
+    <span class="tech-tag">Python</span>
+    <!-- <span class="tech-tag">DAX</span> -->
+    <span class="tech-tag">Star Schema</span>
+</div>
 </div>
 
 </div>
-<!-- card 2 -->
+
+
+<!-- card 3 -->
+
+
 
 <div class="card">
 
-<img src="/images/env-health/home.png">
+    <img src="images/cdc/cdc-thumb.png">
+
+    <div class="card-detail">
+    <h3> County-Level Heart Disease Mortality</h3>
+
+    <p>Analyzing county-level heart disease mortality disparities across Kentucky to identify high-burden regions.</p>
+
+    <a class="project-button" href="/projects/cdc">View Project →</a>
+    <div class="tech-stack">
+        <span class="tech-tag">Excel</span>
+        <span class="tech-tag">Datawrapper</span>
+    </div>
+    </div>
+
+</div> 
+<!-- end of card -->
+
+<!-- card2 -->
+
+<!-- <div class="card">
+
+<img src="images/patient-encounters/pat-en-thumb.png">
 
 <div class="card-detail">
-<h3> Environmental Health Monitoring</h3>
+<h3> Hospital Analytics</h3>
 
-<p>Real-time ETL dashboard using APIs.</p>
+<p>Hosptital A</p>
 
-<a class="project-button" href="/projects/environmental-health">View Project →</a>
-</div>
-
-</div>
-<!-- card3 -->
-
-<div class="card">
-
-<img src="/images/env-health/home.png">
-
-<div class="card-detail">
-<h3> Environmental Health Monitoring</h3>
-
-<p>Real-time ETL dashboard using APIs.</p>
-
-<a class="project-button" href="/projects/environmental-health">View Project →</a>
+<a class="project-button" href="/projects/patient-encounter">View Project →</a>
+<div class="tech-stack">
+    <span class="tech-tag">SQL</span>
+   
 </div>
 
 </div>
 
+</div> -->
+<!-- end of card -->
 </div>
 
 

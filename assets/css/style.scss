@@ -7,11 +7,12 @@
 .page-header {
     background-size: cover;
     background-image: none !important;
-    background-color: #c2c21b !important;
+    background-color: #FF7B00;
+    background-image: linear-gradient(to right, #FF7B00, #f8d680) !important;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 20px 20px;
-    height: 40px;
+    padding: 10px 20px;
+    height: 10px;
 }
 
 .page-header {
@@ -22,10 +23,11 @@
 
 /* CONTENT WIDTH */
 .main-content {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: auto;
     padding: 2rem;
     color: #333333;
+
 
     h1,
     h2,
@@ -34,6 +36,10 @@
     h5,
     h6 {
         color: #333333;
+    }
+
+    img {
+        border: 1px solid #dcd7d7 !important;
     }
 }
 
@@ -54,7 +60,8 @@ h3 {
 
     padding: 10px 18px;
 
-    background: #26afd9;
+    background: #FF7B00;
+
 
     color: white;
 
@@ -66,7 +73,7 @@ h3 {
 
 
 .btn:hover {
-    background: #1565c0;
+    background: #FF7B00;
 }
 
 /* IMAGES */
@@ -116,16 +123,12 @@ pre {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.project-card:hover {
-    transform: translateY(-1px);
-    text-decoration: none;
-    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
-}
+
 
 .project-card h3 {
     margin-top: 0;
     margin-bottom: 10px;
-    color: #155799;
+    color: #FF9E1B;
 }
 
 .project-card p {
@@ -183,9 +186,9 @@ pre {
 
 .card:hover {
 
-    transform: translateY(-6px);
+    transform: translateY(-1px);
 
-    box-shadow: 0 15px 35px rgba(0, 0, 0, .15);
+    box-shadow: 0 6px 6px rgba(0, 0, 0, .15);
 
 }
 
@@ -212,9 +215,9 @@ pre {
 
     padding: 10px 18px;
 
-    background: #3c77d4;
+    background: #ffeede;
 
-    color: white;
+    color: #FF7B00;
 
     text-decoration: none;
     text-align: center;
@@ -223,8 +226,7 @@ pre {
 }
 
 .project-button:hover {
-
-    background: #50d4e0;
+    font-weight: 600;
 
 }
 
@@ -237,12 +239,64 @@ pre {
     font-weight: 600;
     padding: 0 8px;
     margin: 0 !important;
+    font-size: 1.5rem;
+    color: #333333;
 
 }
 
 .card p {
-
+    opacity: 0.8;
+    font-size: 0.9rem;
     padding: 8px;
     margin: 0 !important;
+
+}
+
+
+/* ===============================
+   Tech Stack Tags
+================================== */
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 1rem;
+}
+
+.tech-tag {
+    display: inline-block;
+    padding: 4px 8px;
+
+    background: #ffffff;
+    color: #374151;
+
+    border: .5px solid #f4f6f9;
+    border-radius: 999px;
+
+    font-size: 0.70rem;
+    font-weight: 500;
+
+    letter-spacing: .2px;
+    transition: all .2s ease;
+}
+
+// .tech-tag:hover {
+//     background: #2563eb;
+//     color: white;
+//     border-color: #2563eb;
+// }
+.name {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #484848;
+    margin-bottom: 8px !important;
+}
+
+.about {
+    font-size: 1.1rem;
+    color: #484848;
+    opacity: 0.8;
+    padding-top: 0 !important;
 
 }
