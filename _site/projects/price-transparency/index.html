@@ -47,17 +47,23 @@
 .page-header{
     display:none;
 }
-.project-header { background-image: url("/images/price-transparency/Overview.jpg"); background-size: cover; background-position: center; 
+.project-header { background-image: url("/images/price-transparency/dashboard-overview.png"); background-size: cover; background-position: center; 
 height: 600px;
-width:100%;
-border-radius: 10px; margin-bottom: 25px; 
+
+border-radius: 4px;
+border:1px solid #ccc; 
+width: 1120px;
+margin-bottom: 25px; 
 position: relative; }
+
 .back-home { display: inline-block;
- margin: 20px 0; 
+ margin: 10px 0; 
  padding: 10px 16px; 
  background: #FF7B00;
-color: #ffffff;
-color: white; text-decoration: none; border-radius: 6px; font-weight: bold; } 
+color: white; 
+text-decoration: none; 
+border-radius: 6px; 
+font-weight: bold; } 
 
 
 .metrics-grid {
@@ -123,7 +129,7 @@ color: white; text-decoration: none; border-radius: 6px; font-weight: bold; }
 
 <section class="project-content">
 
-<p class="project-title">Healthcare Price Transparency Analysis</p>
+<p class="project-title"> Price Transparency in Healthcare</p>
 
 <p class="project-tech">
 Power BI • Python • Data Modeling (Star Schema)
@@ -143,7 +149,7 @@ This project transforms raw hospital transparency data from UofL Health, Baptist
 
 <p>
 
-The original hospital pricing files contained hundreds of thousands of records. For this analysis, the data was narrowed to 13 high-impact healthcare procedures spanning inpatient, outpatient, emergency, laboratory, and pharmacy services, resulting in a curated dataset of approximately 4,000 records optimized for cross-hospital price comparisons.
+The original hospital pricing files contained 7,230,075 records combined for three hospitals. For this analysis, the data was narrowed to 49  high-impact healthcare procedures spanning inpatient, outpatient, emergency, laboratory, and pharmacy services, resulting in a curated dataset of approximately 6,681 records optimized for cross-hospital price comparisons.
 </p>
 
 </section>
@@ -191,33 +197,30 @@ Data was collected from publicly available Hospital Price Transparency files rel
 
 <div class="metric-card">
     <p>Total Procedures Analyzed</p>
-    <h3>13</h3>
+    <h3>48</h3>
 </div>
 
 <div class="metric-card">
     <p>Total Payers</p>
-    <h3>59</h3>
+    <h3>46</h3>
+</div>
+<div class="metric-card">
+    <p>Total Plans</p>
+    <h3>53</h3>
+</div>
+
+
+<div class="metric-card">
+    <p>Cash vs Min Negotiated Rate</p>
+    <h3>$1.8K</h3>
 </div>
 
 <div class="metric-card">
-    <p>Average Negotiated Rate</p>
-    <h3>$7,740</h3>
+    <p>Max Price Spread</p>
+    <h3>$22.56K</h3>
 </div>
 
-<div class="metric-card">
-    <p>Median Negotiated Rate</p>
-    <h3>$1,284</h3>
-</div>
 
-<div class="metric-card">
-    <p>Average Cash Price</p>
-    <h3>$22,605</h3>
-</div>
-
-<div class="metric-card">
-    <p>Average Gross Charge</p>
-    <h3>$30,794</h3>
-</div>
 
 </div>
 
@@ -234,19 +237,7 @@ The average gross charge is nearly <strong>four times</strong> higher than the a
 <div class="procedure-grid">
 
 <ul>
-<li>MRI Brain (without contrast)</li>
-<li>MRI Brain (with &amp; without contrast)</li>
-<li>MRI Lumbar Spine</li>
-<li>MRI Knee</li>
-<li>CT Abdomen &amp; Pelvis</li>
-<li>Diagnostic Colonoscopy</li>
-<li>Colonoscopy with Biopsy</li>
-<li>Total Knee Replacement</li>
-<li>Emergency Room Visit - Level 4</li>
-<li>Emergency Room Visit - Level 5</li>
-<li>Comprehensive Metabolic Panel</li>
-<li>Complete Blood Count</li>
-<li>Vaginal Delivery</li>
+
 </ul>
 
 </div>
@@ -257,7 +248,7 @@ The average gross charge is nearly <strong>four times</strong> higher than the a
 
 <h3 class="text-bold">Data Model</h3>
 
-<img src="/images/price-transparency/datamodel.jpg?raw=true" alt="Healthcare Price Data Model" class="project-image" />
+<img src="/images/price-transparency/data-model.png?raw=true" alt="Healthcare Price Data Model" class="project-image" />
 
 </section>
 
@@ -323,10 +314,10 @@ Compares negotiated insurance rates with cash prices across hospitals, showing t
 
 <section>
 
-<h3 class="text-bold">Hospital Price Comparison</h3>
+<h3 class="text-bold">Trans</h3>
 
 <p>
-Side-by-side comparison of negotiated rates across all three hospitals for common procedures. Total Knee Replacement was excluded because it disproportionately skewed the comparison.
+
 </p>
 
 <img src="/images/price-transparency/comparison.png?raw=true" alt="Hospital Comparison" class="project-image" />
@@ -385,7 +376,7 @@ Across several common procedures—including CT Abdomen &amp; Pelvis and Colonos
 
 <hr />
 
-<h2 id="back-to-home">Back to Home</h2>
+<h3 id="back-to-home">Back to Home</h3>
 <p><a href="/">← Return Home</a></p>
 
 

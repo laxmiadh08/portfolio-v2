@@ -1,0 +1,901 @@
+---
+layout: default
+
+permalink: /projects/price/
+---
+
+
+<style>
+/* ── RESET & BASE ─────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:        #0A0F1E;
+  --navy-mid:    #1E3A5F;
+  --navy-light:  #2A4A7F;
+  --white:       #FFFFFF;
+  --off-white:   #F8FAFC;
+  --slate:       #64748B;
+  --slate-light: #CBD5E1;
+  --coral:       #FF6B35;
+  --emerald:     #10B981;
+  --red:         #EF4444;
+  --amber:       #F59E0B;
+  --text-dark:   #0F172A;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  background: var(--off-white);
+  color: var(--text-dark);
+  line-height: 1.7;
+}
+
+/* ── UTILITY ──────────────────────────────────────── */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+.mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+.section-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* ── NAV ──────────────────────────────────────────── */
+nav {
+  /* position: sticky; */
+  top: 0;
+  z-index: 100;
+  /* background: rgba(10, 15, 30, 0.96); */
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 14px 0;
+}
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.nav-brand {
+  font-family: system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: var(--white);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  margin-right: auto;
+}
+nav a.nav-link {
+  font-family: system-ui, sans-serif;
+  font-size: 0.82rem;
+  color: var(--slate-light);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+}
+nav a.nav-link:hover { color: var(--coral); }
+.back-btn {
+  font-family: system-ui, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  background: var(--coral);
+  color: var(--white);
+  padding: 7px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.back-btn:hover { opacity: 0.88; }
+
+/* ── HERO ─────────────────────────────────────────── */
+.hero {
+  background: var(--navy);
+  background-image:
+    linear-gradient(to bottom, rgba(10,15,30,0.55) 0%, rgba(10,15,30,0.88) 60%, rgba(10,15,30,1) 100%),
+    url('dashboard-overview.png');
+  background-size: cover;
+  background-position: center top;
+  padding: 32px 0 32px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.hero-inner { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,107,53,0.15);
+  border: 1px solid rgba(255,107,53,0.35);
+  border-radius: 100px;
+  padding: 5px 14px;
+  font-family: system-ui, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--coral);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.hero-tag::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--coral); }
+.hero h1 {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 900;
+  color: var(--white);
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  margin-bottom: 20px;
+}
+.hero h1 em {
+  font-style: normal;
+  color: var(--coral);
+}
+.hero-lead {
+  font-size: 1.12rem;
+  color: rgba(255,255,255,0.72);
+  /* max-width: 640px; */
+  margin-bottom: 36px;
+  line-height: 1.65;
+}
+.hero-tech {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content:center;
+}
+.tech-pill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+  color: rgba(255,255,255,0.75);
+  padding: 5px 12px;
+  border-radius: 4px;
+}
+
+/* ── CONTEXT SECTION ──────────────────────────────── */
+.section-light { background: var(--white); padding: 16px 0; }
+.section-dark  { background: var(--navy);  padding: 16px 0; }
+.section-off   { background: var(--off-white); padding: 16px 0; }
+
+.section-title {
+  font-family: system-ui, sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-dark);
+  margin-bottom: 6px !important;
+  margin-top:1rem!important;
+}
+.section-title-white {
+  font-family: system-ui, sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+.section-body {
+  font-size: 1.02rem;
+  color: #374151;
+  /* max-width: 760px; */
+  margin-bottom: 24px;
+}
+.section-body-white {
+  font-size: 1.02rem;
+  color: rgba(255,255,255,0.72);
+  /* max-width: 760px; */
+  margin-bottom: 24px;
+}
+
+/* ── KPI RAIL ─────────────────────────────────────── */
+.kpi-rail {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+.kpi-card {
+  background: var(--white);
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: box-shadow 0.2s;
+}
+.kpi-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+.kpi-label {
+  font-family: system-ui, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--slate);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.kpi-value {
+  font-family: system-ui, sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--text-dark);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.kpi-value.accent { color: var(--coral); }
+.kpi-sub {
+  font-size: 0.8rem;
+  color: var(--slate);
+  font-family: system-ui, sans-serif;
+}
+
+/* ── DATA SCALE BAR ───────────────────────────────── */
+.scale-bar-wrap { margin: 32px 0; }
+.scale-label {
+  font-family: system-ui, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--slate);
+  margin-bottom: 6px;
+}
+.scale-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.scale-name {
+  font-family: system-ui, sans-serif;
+  font-size: 0.82rem;
+  color: var(--text-dark);
+  width: 160px;
+  flex-shrink: 0;
+}
+.scale-bar {
+  height: 10px;
+  border-radius: 100px;
+  transition: width 0.4s ease;
+}
+.scale-count {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--slate);
+}
+
+/* ── FINDING CARDS ────────────────────────────────── */
+.findings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  margin-top: 36px;
+}
+.finding-card {
+  background: var(--white);
+  border-radius: 10px;
+  border: 1px solid #E5E7EB;
+  border-left: 4px solid var(--slate);
+  padding: 24px 24px 24px 22px;
+}
+.finding-card.flag    { border-left-color: var(--red);     }
+.finding-card.good    { border-left-color: var(--emerald); }
+.finding-card.warning { border-left-color: var(--amber);   }
+.finding-card.insight { border-left-color: var(--coral);   }
+.finding-badge {
+  display: inline-block;
+  font-family: system-ui, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.finding-card.flag    .finding-badge { background: #FEF2F2; color: var(--red);     }
+.finding-card.good    .finding-badge { background: #ECFDF5; color: #059669;        }
+.finding-card.warning .finding-badge { background: #FFFBEB; color: #D97706;        }
+.finding-card.insight .finding-badge { background: #FFF4EF; color: var(--coral);   }
+.finding-title {
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+.finding-body {
+  font-size: 0.92rem;
+  color: #4B5563;
+  line-height: 1.6;
+}
+.finding-stat {
+  margin-top: 12px;
+  font-family: system-ui, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+.finding-card.flag    .finding-stat { color: var(--red);     }
+.finding-card.good    .finding-stat { color: var(--emerald); }
+.finding-card.warning .finding-stat { color: var(--amber);   }
+.finding-card.insight .finding-stat { color: var(--coral);   }
+
+/* ── HOSPITALS TABLE ──────────────────────────────── */
+.hosp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin: 28px 0;
+}
+.hosp-card {
+  background: #e5e5e5;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 22px 24px;
+}
+.hosp-name {
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #333;
+  margin-bottom: 4px;
+}
+.hosp-detail {
+  font-family: system-ui, sans-serif;
+  font-size: 0.82rem;
+  color: rgba(0,0,0,0.8);
+  margin-bottom: 14px;
+}
+.hosp-stat-row { display: flex; gap: 20px; flex-wrap: wrap; }
+.hosp-stat { display: flex; flex-direction: column; gap: 2px; }
+.hosp-stat-val {
+  font-family: system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: var(--coral);
+  letter-spacing: -0.02em;
+}
+.hosp-stat-lbl {
+  font-family: system-ui, sans-serif;
+  font-size: 0.72rem;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.hosp-format-pill {
+  display: inline-block;
+  margin-top: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  padding: 3px 9px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.08);
+  color: #333;
+}
+
+/* ── BQ LIST ──────────────────────────────────────── */
+.bq-list { list-style: none; padding: 0; margin: 24px 0; display: flex; flex-direction: column; gap: 12px; }
+.bq-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: var(--white);
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  padding: 16px 18px;
+}
+.bq-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--coral);
+  min-width: 28px;
+  padding-top: 1px;
+}
+.bq-text {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  line-height: 1.55;
+}
+
+/* ── MODEL IMAGE ──────────────────────────────────── */
+.img-frame {
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 28px 0;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+}
+.img-frame img { display: block; width: 100%; height: auto; margin-bottom:0!important }
+.img-caption {
+  font-family: system-ui, sans-serif;
+  font-size: 0.78rem;
+  color: var(--slate);
+  text-align: center;
+  padding: 10px;
+  background: var(--off-white);
+  border-top: 1px solid #E5E7EB;
+}
+
+
+
+/* ── DATA MODEL SECTION ───────────────────────────── */
+.schema-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  margin: 28px 0;
+}
+.schema-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 18px;
+}
+.schema-card.fact {
+  border-color: rgba(255,107,53,0.4);
+  background: rgba(255,107,53,0.06);
+}
+.schema-table-name {
+  font-family: system-ui, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.schema-card.fact .schema-table-name { color: var(--coral); }
+.schema-col {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.55);
+  padding: 3px 0;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.schema-col-tag {
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 3px;
+  min-width: 24px;
+  text-align: center;
+}
+.pk { background: rgba(16,185,129,0.2); color: #10B981; }
+.fk { background: rgba(245,158,11,0.2); color: #F59E0B; }
+.m  { background: rgba(255,107,53,0.2); color: var(--coral); }
+
+/* ── PROCEDURES TAG CLOUD ─────────────────────────── */
+.proc-cloud { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0; }
+.proc-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  background: var(--white);
+  border: 1px solid #E5E7EB;
+  color: var(--slate);
+  padding: 5px 11px;
+  border-radius: 5px;
+}
+
+/* ── FOOTER ───────────────────────────────────────── */
+footer {
+  /* background: var(--navy); */
+  /* padding: 16px 0; */
+  border-top: 1px solid rgba(255,255,255,0.06);
+  text-align: left;
+}
+footer p {
+  font-family: system-ui, sans-serif;
+  font-size: 0.85rem;
+  color: rgba(0, 0, 0, 0.35);
+}
+footer a {
+  color: var(--coral);
+  text-decoration: none;
+  font-weight: 600;
+}
+/* .footer-back {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-family: system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: var(--coral);
+  color: var(--white);
+  padding: 10px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+} */
+
+/* ── RESPONSIVE ───────────────────────────────────── */
+@media (max-width: 640px) {
+  .container { padding: 0 20px; }
+  .hero { padding: 80px 0 60px; }
+  .nav-link { display: none; }
+  .kpi-rail { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+<nav>
+  <div class="nav-inner">
+    <a class="back-btn" href="/">← Back to Home</a>
+  </div>
+</nav>
+
+<body>
+<header class="hero" id="overview">
+  <div class="hero-inner">
+    <h1>Price Transparency<br>in <em>Healthcare</em></h1>
+    <p class="hero-lead">
+      Analyzing 6K rows by filtering out from 7.2 million raw hospital pricing records across three Louisville, Kentucky hospitals to expose negotiation gaps, payer disparities, and contract anomalies.
+    </p>
+    <div class="hero-tech">
+      <span class="tech-pill">Python</span>
+      <span class="tech-pill">pandas</span>
+      <span class="tech-pill">Power BI</span>
+      <span class="tech-pill">DAX</span>
+      <span class="tech-pill">Star Schema</span>
+      <span class="tech-pill">CMS Price Transparency</span>
+    </div>
+  </div>
+</header>
+
+<!-- CONTEXT -->
+<section class="section-light" id="context">
+  <div class="container">
+    <span class="section-eyebrow">Background</span>
+    <h2 class="section-title">Why Hospital Pricing Data Is Hard to Use</h2>
+    <p class="section-body">
+      Since 2021, the CMS Hospital Price Transparency Rule requires every U.S. hospital to publish machine-readable files disclosing their gross charges, cash prices, and payer-negotiated rates. In practice, these files arrive in incompatible formats — some wide with hundreds of payer columns, others long with one row per payer — making cross-hospital comparison nearly impossible without significant data engineering.
+    </p>
+    <p class="section-body">
+      This project built a full pipeline: automated format detection, layout-aware parsing, normalization into a star schema, and a Power BI dashboard — transforming 7.2 million raw records into 6,681 analysis-ready rows covering 48 high-impact procedures.
+    </p>
+
+    <!-- KPI RAIL -->
+    <div class="kpi-rail">
+      <div class="kpi-card">
+        <span class="kpi-label">CPT Procedures</span>
+        <span class="kpi-value">48</span>
+        <span class="kpi-sub">Inpatient, outpatient, lab, pharmacy</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Unique Payers</span>
+        <span class="kpi-value">46</span>
+        <span class="kpi-sub">Across 53 distinct plan types</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Analysis Rows</span>
+        <span class="kpi-value">6,681</span>
+        <span class="kpi-sub">From 7.2M raw records</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Max Price Spread</span>
+        <span class="kpi-value accent">$122K</span>
+        <span class="kpi-sub">Same procedure, different payer</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Cash vs Min Rate</span>
+        <span class="kpi-value accent">$1.8K</span>
+        <span class="kpi-sub">Avg premium paid uninsured</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOSPITALS -->
+<section class="section-off" id="data">
+  <div class="container">
+    <span class="section-eyebrow" style="color:var(--coral)">Data Sources</span>
+    <h2 class="section-title-dark">Three Hospitals, Three File Formats</h2>
+    <p class="section-body-off">
+      Data was collected from publicly available CMS Hospital Price Transparency files. Each hospital publishes a different file structure — a real-world data engineering challenge that required format auto-detection before any analysis could begin.
+    </p>
+
+    <div class="hosp-grid">
+      <div class="hosp-card">
+        <div class="hosp-name">University of Louisville Health</div>
+        <div class="hosp-detail">Louisville, KY</div>
+        <div class="hosp-stat-row">
+          <div class="hosp-stat">
+            <span class="hosp-stat-val">379</span>
+            <span class="hosp-stat-lbl">Columns</span>
+          </div>
+          <div class="hosp-stat">
+            <span class="hosp-stat-val">4,423</span>
+            <span class="hosp-stat-lbl">Output rows</span>
+          </div>
+          <div class="hosp-stat">
+            <span class="hosp-stat-val">40</span>
+            <span class="hosp-stat-lbl">Payer contracts</span>
+          </div>
+        </div>
+     
+      </div>
+      <div class="hosp-card">
+        <div class="hosp-name">Baptist Health</div>
+        <div class="hosp-detail">Louisville, KY </div>
+        <div class="hosp-stat-row">
+          <div class="hosp-stat">
+            <span class="hosp-stat-val">28</span>
+            <span class="hosp-stat-lbl">Columns</span>
+          </div>
+          <div class="hosp-stat">
+            <span class="hosp-stat-val">420</span>
+            <span class="hosp-stat-lbl">Output rows</span>
+          </div>
+          <div class="hosp-stat">
+            <span class="hosp-stat-val">28</span>
+            <span class="hosp-stat-lbl">Payer contracts</span>
+          </div>
+        </div>
+      
+      </div>
+      <div class="hosp-card">
+        <div class="hosp-name">Norton Hospital</div>
+        <div class="hosp-detail">Louisville, KY</div>
+        <div class="hosp-stat-row">
+          <div class="hosp-stat">
+            <span class="hosp-stat-val">30</span>
+            <span class="hosp-stat-lbl">Columns</span>
+          </div>
+          <div class="hosp-stat">
+            <span class="hosp-stat-val">1,838</span>
+            <span class="hosp-stat-lbl">Output rows</span>
+          </div>
+          <div class="hosp-stat">
+            <span class="hosp-stat-val">13</span>
+            <span class="hosp-stat-lbl">Payer contracts</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="section-body-off" style="margin-top:24px; font-size:0.92rem;">
+      <strong style="color:black;">The engineering challenge:</strong> UofL's file used a wide format with one column per payer (379 total), requiring a melt operation to convert 97 rows into 1,940 long-format rows. Norton and Baptist used long format but had ragged meta rows — the hospital name rows contained fewer columns than the data rows, causing pandas' default C parser to crash. The fix required a two-pass read strategy: meta rows and data rows loaded separately, then combined.
+    </p>
+  </div>
+</section>
+
+<!-- BUSINESS QUESTIONS -->
+<section class="section-off" id="questions">
+  <div class="container">
+    <span class="section-eyebrow">Analysis Goals</span>
+    <h2 class="section-title">Business Questions This Dashboard Answers</h2>
+
+    <ul class="bq-list">
+      <li class="bq-item">
+        <span class="bq-num">Q1</span>
+        <span class="bq-text">Which hospital charges the highest gross charge for the same CPT code — and how does their negotiated rate compare to competitors?</span>
+      </li>
+      <li class="bq-item">
+        <span class="bq-num">Q2</span>
+        <span class="bq-text">For which procedures does the negotiated rate exceed the gross charge — and which payers and hospitals are involved?</span>
+      </li>
+      <li class="bq-item">
+        <span class="bq-num">Q3</span>
+        <span class="bq-text">Which payer consistently negotiates the lowest rates, and which plan type (Medicare Advantage, Commercial, Managed Medicaid) gets the deepest discount?</span>
+      </li>
+      <li class="bq-item">
+        <span class="bq-num">Q4</span>
+        <span class="bq-text">How does the cash price compare to the minimum negotiated rate — are uninsured patients paying more than the best-insured patients?</span>
+      </li>
+      <li class="bq-item">
+        <span class="bq-num">Q5</span>
+        <span class="bq-text">Which procedures show the widest min-to-max negotiated rate spread, indicating the most volatile or inconsistent payer contracting?</span>
+      </li>
+      <li class="bq-item">
+        <span class="bq-num">Q6</span>
+        <span class="bq-text">How complete is each hospital's gross charge disclosure — and does incomplete disclosure correlate with higher negotiated rates?</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- DATA MODEL -->
+<section class="section-off" id="model">
+  <div class="container">
+    <span class="section-eyebrow" style="color:var(--coral)">Data Model</span>
+    <h2 class="section-title-white">Star Schema Design</h2>
+    <p class="section-body-off">
+      The cleaned data was modeled as a star schema with one fact table and three dimension tables. Key design decisions were driven by the data itself — <code style="color:var(--coral); font-family:monospace">min_negotiated</code> and <code style="color:var(--coral); font-family:monospace">max_negotiated</code> belong in the fact table (not DimProcedure) because Norton stores different ranges per payer row. DimProcedure is keyed on <code style="color:var(--coral); font-family:monospace">hospital + cpt_code</code> because the same CPT code has different procedure names at each hospital.
+    </p>
+
+
+<div class="img-frame" style="margin-top:28px;">
+ <img src="/images/price-transparency/data-model.png?raw=true"
+        alt="Hospital Comparison"
+        class="project-image"/>
+        <!-- <div class="img-caption">Data Model</div> -->
+        </div>
+  </div>
+</section>
+
+<!-- KEY FINDINGS -->
+<section class="section-light" id="findings">
+  <div class="container">
+    <span class="section-eyebrow">Analysis</span>
+    <h2 class="section-title">Key Findings</h2>
+    <p class="section-body">
+      The scatter plot of gross charge vs. negotiated rate — with a 45° reference line where rate = gross charge — is the analytical centerpiece. Dots below the line indicate successful negotiation. Dots above the line are contract anomalies. What the data revealed was more varied than expected.
+    </p>
+
+    <div class="findings-grid">
+      <div class="finding-card flag">
+        <span class="finding-badge">Contract Anomaly</span>
+        <div class="finding-title">CPT 871 — Negotiated Rate Exceeds Gross Charge</div>
+        <div class="finding-body">
+          At Baptist Health, CPT 871 shows a gross charge of $61,621 with a negotiated rate of $23,961 — sitting visibly above the diagonal reference line. This means the contracted payer rate exceeds the hospital's own listed price, representing a direct financial loss and a contract management failure that warrants immediate audit.
+        </div>
+        <div class="finding-stat">$61,621 → $23,961 above line</div>
+      </div>
+
+      <div class="finding-card good">
+        <span class="finding-badge">Best Negotiation</span>
+        <div class="finding-title">CPT 470 — 74% Discount on Joint Replacement</div>
+        <div class="finding-body">
+          CPT 470 (Major Joint Replacement — hip/knee) at Baptist Health shows the deepest payer discount in the dataset. With a gross charge of $122,570 and an average negotiated rate of $31,844, payers achieved approximately a 74% reduction from list price — the furthest dot below the diagonal. High procedure volume gives payers strong leverage on joint replacements.
+        </div>
+        <div class="finding-stat">74% below gross charge</div>
+      </div>
+
+      <div class="finding-card warning">
+        <span class="finding-badge">Data Gap</span>
+        <div class="finding-title">18% Gross Charge Non-Disclosure at Norton &amp; UofL</div>
+        <div class="finding-body">
+          Baptist Health disclosed gross charges for 100% of procedure rows. Norton Hospital disclosed 83.24% and UofL Health 82.16% — leaving approximately 1 in 6 rows without a gross charge. Without this figure, patients and researchers cannot calculate the true payer discount, undermining the purpose of the CMS transparency mandate.
+        </div>
+        <div class="finding-stat">Baptist 100% · Norton 83% · UofL 82%</div>
+      </div>
+
+      <div class="finding-card insight">
+        <span class="finding-badge">Market Insight</span>
+        <div class="finding-title">Norton Holds Firm — Minimal Payer Discounts</div>
+        <div class="finding-body">
+          Norton Hospital's procedures (CPT codes 291, 292, 193, 310, 603, 872) cluster tightly along the diagonal reference line across the $10K–$40K gross charge range. Payers are achieving minimal discounts off Norton's list price — a pattern consistent with a hospital that holds strong regional market power in Louisville, forcing payers to accept near-list rates.
+        </div>
+        <div class="finding-stat">Rates hug the diagonal across all payers</div>
+      </div>
+
+      <div class="finding-card insight">
+        <span class="finding-badge">Patient Impact</span>
+        <div class="finding-title">Cash Patients Pay $1,800 More Than Best Payer Rate</div>
+        <div class="finding-body">
+          On average, the minimum payer-negotiated rate across all procedures is $1,800 lower than the cash price charged to uninsured patients. For the highest-cost procedures, this gap widens dramatically — uninsured patients face not the gross charge sticker price, but a cash price that still substantially exceeds what even the most expensive insurer pays.
+        </div>
+        <div class="finding-stat">$1,800 avg premium for uninsured</div>
+      </div>
+
+      <div class="finding-card flag">
+        <span class="finding-badge">Outlier Effect</span>
+        <div class="finding-title">CPT 470 Skews All Hospital-Level Averages</div>
+        <div class="finding-body">
+          Baptist Health's average negotiated rate of $15K is nearly 8× UofL's $1K average. However, this comparison is misleading — the hospitals bill for fundamentally different procedure mixes. CPT 470's $31,844 rate alone pulls Baptist's average dramatically upward. The median rate ($1,284 vs mean $7,740 overall) is the more honest metric for typical patient experience.
+        </div>
+        <div class="finding-stat">Mean $7,740 · Median $1,284</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DAX MEASURES -->
+<section class="section-off" id="dax">
+  <div class="container">
+    <span class="section-eyebrow">Technical Detail</span>
+    <h2 class="section-title">Key DAX Measures</h2>
+    <p class="section-body">
+      Several measures required careful handling of null gross charge values — Norton and UofL left ~18% of rows without a gross charge, which caused Power BI to suppress those hospitals from any visual using naive aggregations. Each measure below explicitly excludes blank gross charges before dividing.
+    </p>
+
+    <div class="code-block">
+      <div class="code-block-header">DAX — Average Negotiated Rate (null-safe)</div>
+      <pre><span class="code-fn">Avg Negotiated Rate</span> =
+<span class="code-kw">CALCULATE</span>(
+    <span class="code-kw">AVERAGE</span>(<span class="code-str">'Fact_Prices'[negotiated_rate]</span>),
+    <span class="code-kw">FILTER</span>(
+        Fact_Prices,
+        <span class="code-kw">NOT</span> <span class="code-kw">ISBLANK</span>(Fact_Prices[negotiated_rate]) &&
+        Fact_Prices[negotiated_rate] >= <span class="code-num">50</span>  <span class="code-cmt">-- exclude data-entry noise</span>
+    )
+)</pre>
+    </div>
+
+    <div class="code-block">
+      <div class="code-block-header">DAX — Discount % Off Gross (handles missing gross charges)</div>
+      <pre><span class="code-fn">Discount % Off Gross</span> =
+<span class="code-kw">VAR</span> AvgNeg =
+    <span class="code-kw">AVERAGE</span>(Fact_Prices[negotiated_rate])
+<span class="code-kw">VAR</span> AvgGross =
+    <span class="code-kw">CALCULATE</span>(
+        <span class="code-kw">AVERAGE</span>(Fact_Prices[gross_charge]),
+        <span class="code-kw">NOT</span> <span class="code-kw">ISBLANK</span>(Fact_Prices[gross_charge])
+    )
+<span class="code-kw">RETURN</span>
+    <span class="code-kw">IF</span>(
+        <span class="code-kw">NOT</span> <span class="code-kw">ISBLANK</span>(AvgGross),
+        <span class="code-num">1</span> - <span class="code-kw">DIVIDE</span>(AvgNeg, AvgGross),
+        <span class="code-kw">BLANK</span>()
+    )</pre>
+    </div>
+
+    <div class="code-block">
+      <div class="code-block-header">DAX — Overage Amount (calculated column on Fact_Prices)</div>
+      <pre><span class="code-fn">Overage Amount</span> =
+<span class="code-kw">IF</span>(
+    Fact_Prices[rate_exceeds_gross] = <span class="code-str">"Yes"</span>,
+    Fact_Prices[negotiated_rate] - Fact_Prices[gross_charge],
+    <span class="code-kw">BLANK</span>()
+)
+<span class="code-cmt">-- Use as a calculated COLUMN (not measure) to display
+-- row-by-row in the pricing anomalies table visual</span></pre>
+    </div>
+
+    <div class="code-block">
+      <div class="code-block-header">DAX — Gross Charge Coverage % by Hospital</div>
+      <pre><span class="code-fn">Gross Charge Coverage</span> =
+<span class="code-kw">DIVIDE</span>(
+    <span class="code-kw">CALCULATE</span>(
+        <span class="code-kw">COUNTROWS</span>(Fact_Prices),
+        <span class="code-kw">NOT</span> <span class="code-kw">ISBLANK</span>(Fact_Prices[gross_charge])
+    ),
+    <span class="code-kw">COUNTROWS</span>(Fact_Prices),
+    <span class="code-num">0</span>
+)
+<span class="code-cmt">-- Baptist = 100% · Norton = 83.24% · UofL = 82.16%</span></pre>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEDURES -->
+<section class="section-light" id="procedures">
+  <div class="container">
+    <span class="section-eyebrow">Scope</span>
+    <h2 class="section-title">Procedures Included in Analysis</h2>
+    <p class="section-body">
+      48 CPT codes were selected spanning emergency, surgical, imaging, laboratory, and inpatient services — chosen to enable meaningful cross-hospital comparison where the same standardized code appears at more than one hospital.
+    </p>
+    <div class="proc-cloud">
+      <span class="proc-tag">99285 · ED Visit</span>
+      <span class="proc-tag">470 · Knee Replacement</span>
+      <span class="proc-tag">29827 · Shoulder Arthroscopy</span>
+      <span class="proc-tag">45378 · Colonoscopy</span>
+      <span class="proc-tag">45385 · Colonoscopy w/ Polypectomy</span>
+      <span class="proc-tag">43239 · Upper GI Endoscopy</span>
+      <span class="proc-tag">29881 · Knee Meniscectomy</span>
+      <span class="proc-tag">76830 · Pelvic Ultrasound</span>
+      <span class="proc-tag">93306 · Echo w/ Doppler</span>
+      <span class="proc-tag">93451 · Right Heart Cath</span>
+      <span class="proc-tag">72148 · MRI Lumbar</span>
+      <span class="proc-tag">73721 · MRI Knee</span>
+      <span class="proc-tag">73221 · MRI Shoulder</span>
+      <span class="proc-tag">74177 · CT Abdomen &amp; Pelvis</span>
+      <span class="proc-tag">74160 · CT Abdomen</span>
+      <span class="proc-tag">72193 · CT Pelvis</span>
+      <span class="proc-tag">871 · Complex Cardiac Procedure</span>
+      <span class="proc-tag">872 · Cardiac Support</span>
+      <span class="proc-tag">291 · Inpatient Psych</span>
+      <span class="proc-tag">292 · Detox</span>
+      <span class="proc-tag">310 · Medical Rehab</span>
+      <span class="proc-tag">392 · Bone Marrow Transplant</span>
+      <span class="proc-tag">690 · Kidney Procedure</span>
+      <span class="proc-tag">641 · Misc Surgery</span>
+      <span class="proc-tag">603 · Radiation Therapy</span>
+      <span class="proc-tag">+ 23 additional CPT codes</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a class="footer-back" href="/">← Return to Portfolio</a>
+  <p>Data sourced from CMS Hospital Price Transparency Rule (45 CFR Part 180) · Public domain hospital pricing files</p>
+  <!-- <p style="margin-top:8px;">Built with Python · pandas · Power BI · DAX</p> -->
+</footer>
