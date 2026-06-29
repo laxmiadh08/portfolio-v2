@@ -392,22 +392,25 @@ body {
     </div>
 </a>
     <!-- Project 3 — placeholder -->
-<!-- 
-    <div class="project-card">
-      <img src="/images/cdc/cdc-thumb.png" alt="Project">
+ <a class="project-card-link" href="https://github.com/laxmiadh08/Environment-Monitoring-App" targe="_blank">
+     <div class="project-card">
+      <!-- <img src="/images/cdc/cdc-thumb.png" alt="Heart Disease Mortality Analysis"> -->
       <div class="project-card-body">
-        <h3 class="project-card-title">Test Project</h3>
+        <h3 class="project-card-title">Environmental Health Monitoring App</h3>
         <p class="project-card-desc">
-          Analyzed county-level heart disease mortality disparities across Kentucky to identify high-burden regions.
+        Built an end-to-end ETL pipeline for an environmental health app, integrating live weather and air quality data with health risk insights.
         </p>
         <div class="project-card-tags">
-          <span class="tag">Excel</span>
-          <span class="tag">Datawrapper</span>
+          <span class="tag">Python</span>
+          <span class="tag">PostgreSQL</span>
+           <span class="tag">Supabase</span>
         </div>
-        <a class="project-card-link" href="/projects/price">View Project →</a>
+       <span class="project-card-view">
+        View Project →
+      </span>
       </div>
-    </div> 
-    -->
+    </div>
+</a>
 
   </div>
 </div>
