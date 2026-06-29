@@ -524,7 +524,7 @@ footer a {
 <!-- CONTEXT -->
 <section class="section-light" id="context">
   <div class="container">
-    <p style="text-align:right;">Check out: <a class="back-btn" href="https://github.com/laxmiadh08/Healthcare-Price-Transparency">github</a> </p>
+    <p style="text-align:right;">Check out: <a class="footer-back hosp-stat-val" href="https://github.com/laxmiadh08/Healthcare-Price-Transparency"  target="_blank">Github</a></p>
   
     <span class="section-eyebrow">Background</span>
   
@@ -571,7 +571,7 @@ footer a {
     <p class="section-body-off" style="margin-top:24px; font-size:0.92rem;">
       Challange: UofL's file used a wide format with one column per payer (379 total), requiring a melt operation to convert 97 rows into 1,940 long-format rows. Norton and Baptist used long format. I used LLM to format these files and consolidate into 13 columns for this analysis.
     </p>
-  <p>Check out code here: <a class="footer-back hosp-stat-val" href="https://github.com/laxmiadh08/Healthcare-Price-Transparency">Github</a></p>
+  <p>Check out code here: <a class="footer-back hosp-stat-val" href="https://github.com/laxmiadh08/Healthcare-Price-Transparency"  target="_blank">Github</a></p>
  <div class="hosp-grid">
       <div class="hosp-card">
         <div class="hosp-name">University of Louisville Health</div>
