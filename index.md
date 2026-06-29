@@ -31,7 +31,7 @@ body {
 /*  HERO / INTRO ─*/
 .home-hero {
   background: #fff;
-  padding: 16px;
+  padding: 16px 0px;
   margin-bottom: 0;
   /* border:1px solid #d8d8d8; */
 }
@@ -64,8 +64,8 @@ body {
 
 
 .home-about {
-  font-size: 1.05rem;
-  color:#333;
+  font-size: 1rem;
+  color:#767676;
   line-height: 1.52;
   margin: 0 0 4px 0;
 }
@@ -103,10 +103,10 @@ body {
 }
 
 .section-title {
-  font-size: 1.65rem;
+  font-size: 1.75rem;
   font-weight: 800;
   letter-spacing: -0.02em;
-  color: var(--text-dark);
+  color:#767676!important;
   margin: 0 0 32px 0;
 }
 
