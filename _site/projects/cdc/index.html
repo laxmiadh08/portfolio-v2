@@ -43,321 +43,525 @@
     </header>
 
     <main id="content" class="main-content" role="main">
-      <style> 
-.page-header{
-    display:none;
-}
-.project-header { background-image: url("/images/cdc/overview.jpg"); background-size: cover; background-position: center; 
-height: 400px;
-width:100%;
-border-radius: 4px;
-border:1px solid #ccc;
-margin: 25px 0; 
-position: relative; } 
-.back-home { display: inline-block; margin: 20px 0; padding: 10px 16px;  background: #FF7B00;
-color: #ffffff;text-decoration: none; border-radius: 6px; font-weight: bold; }
+      <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-.metrics-grid {
-    display: grid;
-    gap: 16px;
-    margin: 2rem 0;
-    grid-auto-flow: column
+:root {
+  --navy:        #042338;
+  --navy-mid:    #1E3A5F;
+  --navy-light:  #2A4A7F;
+  --white:       #FFFFFF;
+  --off-white:   #F8FAFC;
+  --slate:       #64748B;
+  --slate-light: #CBD5E1;
+  --coral:       #FF6B35;
+  --emerald:     #10B981;
+  --red:         #EF4444;
+  --amber:       #F59E0B;
+  --text-dark:   #0F172A;
 }
 
-.metric-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap:wrap;
-    padding: 18px 24px;
+html { scroll-behavior: smooth; }
 
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 10px;
-
-    transition: all .2s ease;
+body {
+  font-family: Georgia, 'Times New Roman', serif !important;
+  background: var(--off-white);
+  color: var(--text-dark);
+  line-height: 1.7;
 }
 
-/* .metric-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(0,0,0,.08);
-} */
+.page-header { display: none; }
 
-.metric-card p {
-    margin: 0;
-    font-size: 0.95rem;
-    color: #555;
-    font-weight: 500;
+/* NAV */
+nav {
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 14px 0;
+}
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.back-btn {
+  font-family: system-ui, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  background: var(--coral);
+  color: var(--white);
+  padding: 7px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.back-btn:hover { opacity: 0.88; }
+
+/* HERO */
+.hero {
+  background: var(--navy);
+  padding: 48px 0 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,107,53,0.15);
+  border: 1px solid rgba(255,107,53,0.35);
+  border-radius: 100px;
+  padding: 5px 14px;
+  font-family: system-ui, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--coral);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.hero-tag::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--coral);
+}
+.hero h1 {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 900;
+  color: var(--white);
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  margin-bottom: 20px;
+}
+.hero h1 em {
+  font-style: normal;
+  color: var(--coral);
+}
+.hero-lead {
+  font-size: 1.12rem;
+  color: rgba(255,255,255,0.72);
+  margin-bottom: 36px;
+  line-height: 1.65;
+}
+.hero-tech {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content:center;
+}
+.tech-pill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+  color: rgba(255,255,255,0.75);
+  padding: 5px 12px;
+  border-radius: 4px;
 }
 
-.metric-card h3 {
-    margin: 0;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #0f172a;
-    white-space: nowrap;
-}
-.project-title{
-    font-weight:900;
-    font-size:36px;
-    margin:8px 0 !important;
-}
-.project-tech{
-    margin:4px 0px!important;
-}
-.project-info{
-    font-size:16px;
-    font-style:italic;
-    opacity:0.85;
-}
-.text-bold{
-    font-weight:bold!important;
+/* SECTIONS */
+.section-light { background: var(--white); padding: 40px 0; }
+.section-off   { background: var(--off-white); padding: 40px 0; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+
+.section-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--coral);
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+  display: block;
+  font-family: system-ui, sans-serif;
 }
 
+.section-title {
+  font-family: system-ui, sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+  margin-top: 4px;
+}
+
+.section-body {
+  font-size: 1.02rem;
+  color: #374151;
+  margin-bottom: 24px;
+  line-height: 1.7;
+}
+
+/* KPI RAIL */
+.kpi-rail {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+.kpi-card {
+  background: var(--white);
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: box-shadow 0.2s;
+}
+.kpi-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+.kpi-label {
+  font-family: system-ui, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--slate);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.kpi-value {
+  font-family: system-ui, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--text-dark);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.kpi-value.accent { color: var(--coral); }
+
+/* FINDINGS */
+.finding-card {
+  background: var(--white);
+  border-radius: 4px;
+  border: 1px solid #E5E7EB;
+  padding: 24px 24px 24px 22px;
+  margin-bottom: 12px;
+}
+.finding-title {
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+.finding-body {
+  font-size: 0.92rem;
+  color: #4B5563;
+  line-height: 1.6;
+}
+.finding-stat {
+  margin-top: 12px;
+  font-family: system-ui, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: var(--text-dark);
+}
+
+/* IMAGE FRAME */
+.img-frame {
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 28px 0;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+}
+.img-frame img { display: block; width: 100%; height: auto; margin-bottom: 0 !important; }
+.img-caption {
+  font-family: system-ui, sans-serif;
+  font-size: 0.78rem;
+  color: var(--slate);
+  text-align: center;
+  padding: 10px;
+  background: var(--off-white);
+  border-top: 1px solid #E5E7EB;
+}
+
+/* INSIGHT CARDS */
+.insight-card {
+  background: var(--white);
+  border: 1px solid #E5E7EB;
+  border-radius: 4px;
+  padding: 24px;
+  margin-bottom: 12px;
+}
+.insight-card h3 {
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 8px !important;
+}
+.insight-card p {
+  font-size: 0.92rem;
+  color: #4B5563;
+  line-height: 1.6;
+  margin: 0 !important;
+}
+
+/* FOOTER */
+footer {
+  border-top: 1px solid rgba(0,0,0,0.08);
+  padding: 32px 0;
+  background: var(--white);
+}
+footer p {
+  font-family: system-ui, sans-serif;
+  font-size: 0.85rem;
+  color: rgba(0,0,0,0.35);
+  margin-top: 8px;
+}
+.footer-back {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-family: system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: var(--coral);
+  color: var(--white);
+  padding: 10px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+/* LIST ITEMS */
+ul.findings-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+ul.findings-list li {
+  background: var(--white);
+  border: 1px solid #E5E7EB;
+  border-radius: 6px;
+  padding: 14px 18px;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  line-height: 1.55;
+}
+
+/* TOOLS LIST */
+ul.tools-list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+ul.tools-list li {
+  font-family: system-ui, sans-serif;
+  font-size: 0.88rem;
+  color: #374151;
+  padding: 4px 0;
+}
+
+/* HIGHLIGHT NOTE */
+.note-block {
+  background: rgba(255,107,53,0.06);
+  border: 1px solid rgba(255,107,53,0.25);
+  border-radius: 8px;
+  padding: 16px 20px;
+  font-size: 0.9rem;
+  color: #374151;
+  margin: 20px 0;
+}
+
+@media (max-width: 640px) {
+  .container { padding: 0 20px; }
+  .kpi-rail { grid-template-columns: repeat(2, 1fr); }
+}
 </style>
 
-<p><a class="back-home" href="/">← Back to Home</a></p>
+<nav>
+  <div class="nav-inner">
+    <a class="back-btn" href="/">← Back to Home</a>
+  </div>
+</nav>
 
-<section class="project-content">
+<header class="hero">
+  <div class="hero-inner">
+    <!-- <div class="hero-tag">Public Health Analytics</div> -->
+    <h1>Ischemic Heart Disease<br />Mortality in <em>Kentucky</em></h1>
+    <p class="hero-lead">
+      Analyzed county-level ischemic heart disease mortality across all 120 Kentucky counties to identify geographic disparities and highlight high-burden regions for targeted public health intervention.
+    </p>
+    <div class="hero-tech">
+      <span class="tech-pill">CDC WONDER</span>
+      <span class="tech-pill">Excel</span>
+      <span class="tech-pill">Datawrapper</span>
+      <span class="tech-pill">2019–2024</span>
+    </div>
+  </div>
+</header>
 
-<h1>Ischemic Heart Disease Mortality in Kentucky (2019–2024)</h1>
+<!-- CONTEXT -->
+<section class="section-light">
+  <div class="container">
+    <span class="section-eyebrow">Background</span>
+    <p class="section-body">
+      <i>Heart disease remains the leading cause of death in the United States. Although Kentucky consistently ranks among the states with the highest cardiovascular mortality, substantial variation exists within the state. Rural Appalachian counties experience mortality rates more than twice the national average, while several urban and suburban counties report rates well below both state and national benchmarks.</i>
+    </p>
 
-<p class="project-tech">
-Public Health Analytics • CDC WONDER • Excel • Datawrapper
-</p>
+    <div class="img-frame">
+      <img src="/images/cdc/comparision.png" alt="Kentucky vs National Comparison" />
+    </div>
 
-<p class="lead">
-Analyzed county-level ischemic heart disease mortality across all 120 Kentucky counties to identify geographic disparities and highlight high-burden regions for targeted public health intervention.
-</p>
+    <span class="section-eyebrow" style="margin-top:32px;">Executive Summary</span>
+    <p class="section-body">
+      Using CDC WONDER mortality data from 2019–2024, this analysis evaluated crude ischemic heart disease mortality rates across every Kentucky county. The project identifies geographic clusters of elevated mortality and compares county performance against state and national benchmarks.
+    </p>
 
-<div class="project-highlight">
-<p>
-Heart disease remains the leading cause of death in the United States. Although Kentucky consistently ranks among the states with the highest cardiovascular mortality, substantial variation exists within the state. Rural Appalachian counties experience mortality rates more than twice the national average, while several urban and suburban counties report rates well below both state and national benchmarks.
-</p>
-</div>
-
+    <div class="kpi-rail">
+      <div class="kpi-card">
+        <span class="kpi-label">Counties Analyzed</span>
+        <span class="kpi-value">120</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Highest Mortality Rate</span>
+        <span class="kpi-value accent">375</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Kentucky Mean</span>
+        <span class="kpi-value">165</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">National Mean</span>
+        <span class="kpi-value">145</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Highest Burden County</span>
+        <span class="kpi-value" style="font-size:1.1rem;">Breathitt</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Cause of Death</span>
+        <span class="kpi-value" style="font-size:1.1rem;">I20–I25</span>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section>
-<img src="/images/cdc/comparision.png?raw=true" alt="Kentucky vs National Comparison" class="project-image" />
-<h3 class="text-bold">Executive Summary</h3>
-
-<p>
-Using CDC WONDER mortality data from 2019–2024, this analysis evaluated crude ischemic heart disease mortality rates across every Kentucky county. The project identifies geographic clusters of elevated mortality and compares county performance against state and national benchmarks.
-</p>
-
-<div class="metrics-grid">
-
-<div class="metric-card">
-<p>Counties Analyzed</p>
-<h3>120</h3>
-</div>
-
-<div class="metric-card">
-<p>Highest Mortality Rate</p>
-<h3>375</h3>
-</div>
-
-<div class="metric-card">
-<p>Kentucky Mean</p>
-<h3>165</h3>
-</div>
-
-<div class="metric-card">
-<p>National Mean</p>
-<h3>145</h3>
-</div>
-
-<div class="metric-card">
-<p>Highest Burden County</p>
-<h3>Breathitt</h3>
-</div>
-
-<div class="metric-card">
-<p>Study Period</p>
-<h3>2019–2024</h3>
-</div>
-
-</div>
-
-<div class="metrics-grid">
-
-<div class="metric-card">
-<p>Cause of Death</p>
-<h3>I20–I25</h3>
-</div>
-
-<div class="metric-card">
-<p>Geography</p>
-<h3>120 KY Counties</h3>
-</div>
-
-<div class="metric-card">
-<p>Time Period</p>
-<h3>2019–2024</h3>
-</div>
-
-<div class="metric-card">
-<p>Rate Type</p>
-<h3>Crude Rate</h3>
-</div>
-
-<div class="metric-card">
-<p>Population</p>
-<h3>All Residents</h3>
-</div>
-
-</div>
-
+<!-- KEY FINDINGS -->
+<section class="section-off">
+  <div class="container">
+    <span class="section-eyebrow">Key Findings</span>
+    <ul class="findings-list">
+      <li>Breathitt County recorded the highest crude mortality rate in Kentucky at approximately <strong>375 deaths per 100,000</strong>, more than 2.5× the national average.</li>
+      <li>The ten highest-burden counties are concentrated almost entirely within Eastern Kentucky's Appalachian region.</li>
+      <li>Kentucky's statewide mortality rate (<strong>165 per 100,000</strong>) exceeds the national average (<strong>145 per 100,000</strong>) by approximately 14%.</li>
+      <li>The lowest-burden counties, including Shelby and Madison, reported mortality rates near 35–40 per 100,000 — nearly ten times lower than the highest-burden counties.</li>
+      <li>The statewide choropleth map reveals a clear east-to-west mortality gradient, with eastern counties consistently experiencing the greatest disease burden.</li>
+    </ul>
+  </div>
 </section>
 
-<section>
+<!-- GEOGRAPHIC DISTRIBUTION -->
+<section class="section-light">
+  <div class="container">
+    <span class="section-eyebrow">Geographic Distribution</span>
+    <h2 class="section-title">County-Level Choropleth Map</h2>
+    <p class="section-body">
+      The county-level map reveals a pronounced geographic concentration of heart disease mortality across Kentucky.
+    </p>
 
-<h3 class="text-bold">Key Findings</h3>
+    <div class="img-frame">
+      <img src="/images/cdc/map.png" alt="Kentucky Heart Disease Choropleth Map" />
+    </div>
 
-<ul>
-<li>Breathitt County recorded the highest crude mortality rate in Kentucky at approximately <strong>375 deaths per 100,000</strong>, more than 2.5 times the national average.</li>
-
-<li>The ten highest-burden counties are concentrated almost entirely within Eastern Kentucky's Appalachian region.</li>
-
-<li>Kentucky's statewide mortality rate (<strong>165 per 100,000</strong>) exceeds the national average (<strong>145 per 100,000</strong>) by approximately 14%.</li>
-
-<li>The lowest-burden counties, including Shelby and Madison, reported mortality rates near 35–40 per 100,000—nearly ten times lower than the highest-burden counties.</li>
-
-<li>The statewide choropleth map reveals a clear east-to-west mortality gradient, with eastern counties consistently experiencing the greatest disease burden.</li>
-
-</ul>
-
+    <ul class="findings-list">
+      <li><strong>Eastern Kentucky (Appalachia)</strong> — counties such as Breathitt, Perry, Bell, Wolfe, and Whitley approach or exceed 300–375 deaths per 100,000.</li>
+      <li><strong>Central Kentucky</strong> — exhibits moderate mortality levels that generally align with the statewide average.</li>
+      <li><strong>Western Kentucky</strong> — mixed results, with isolated high-burden counties but overall lower mortality than Eastern Kentucky.</li>
+      <li><strong>Urban and suburban counties</strong> — Jefferson (Louisville), Fayette (Lexington), Shelby, and Madison consistently report the lowest mortality rates.</li>
+    </ul>
+  </div>
 </section>
 
-<section>
-
-<p class="text-bold">Data Source</p>
-
-<p>
-Mortality data was obtained from the CDC WONDER online database using county-level mortality records for ischemic heart disease (2019 -2024)
-</p>
-
-
+<!-- TOP 10 -->
+<section class="section-off">
+  <div class="container">
+    <span class="section-eyebrow">Rankings</span>
+    <h2 class="section-title">Top 10 Highest-Burden Counties</h2>
+    <p class="section-body">
+      The ranking below highlights the counties with the highest ischemic heart disease mortality rates during the study period.
+    </p>
+    <div class="img-frame">
+      <img src="/images/cdc/top10.png" alt="Top 10 Highest Burden Counties" />
+    </div>
+  </div>
 </section>
 
-<section>
+<!-- KEY INSIGHTS -->
+<section class="section-light">
+  <div class="container">
+    <span class="section-eyebrow">Analysis</span>
+    <h2 class="section-title">Key Insights</h2>
 
-<h3>Tools Used</h3>
+    <div class="insight-card">
+      <h3>Regional Health Inequality</h3>
+      <p>The mortality difference between the highest- and lowest-performing counties spans approximately <strong>338 deaths per 100,000</strong>, representing one of the largest county-level health disparities within Kentucky.</p>
+    </div>
 
-<ul>
-<li><strong>CDC WONDER</strong> — Mortality data extraction</li>
-<li><strong>Microsoft Excel</strong> — Data cleaning, aggregation, and statistical summaries</li>
-<li><strong>Datawrapper</strong> — Interactive choropleth map visualization</li>
-</ul>
+    <div class="insight-card">
+      <h3>Appalachian Disease Burden</h3>
+      <p>Eastern Kentucky counties consistently experience the highest mortality rates, suggesting that geographic, socioeconomic, and healthcare access factors contribute to a concentrated regional burden of cardiovascular disease.</p>
+    </div>
 
-<div class="project-highlight">
-<p>
-<strong>Note:</strong> CDC WONDER suppresses county-level values with fewer than ten deaths to protect patient privacy. Suppressed counties were excluded from ranking analyses.
-</p>
-</div>
+    <div class="insight-card">
+      <h3>Statewide Performance</h3>
+      <p>Kentucky's average mortality rate exceeds the national benchmark by roughly 14%, indicating that cardiovascular disease remains a statewide public health priority.</p>
+    </div>
 
+    <div class="insight-card">
+      <h3>Targeted Public Health Opportunities</h3>
+      <p>The analysis demonstrates that statewide averages conceal substantial county-level variation. Prioritizing prevention and intervention efforts in high-burden Appalachian counties could produce the greatest public health impact.</p>
+    </div>
+  </div>
 </section>
 
-<section>
+<!-- DATA & TOOLS -->
+<section class="section-off">
+  <div class="container">
+    <span class="section-eyebrow">Technical Detail</span>
+    <h2 class="section-title">Data Source &amp; Tools</h2>
+    <p class="section-body">
+      Mortality data was obtained from the CDC WONDER online database using county-level mortality records for ischemic heart disease (2019–2024), ICD-10 codes I20–I25.
+    </p>
 
-<h3 class="text-bold">Geographic Distribution</h3>
-<img src="/images/cdc/map.png?raw=true" alt="Kentucky Heart Disease Choropleth Map" class="project-image" />
+    <ul class="tools-list">
+      <li><strong>CDC WONDER</strong> — Mortality data extraction</li>
+      <li><strong>Microsoft Excel</strong> — Data cleaning, aggregation, and statistical summaries</li>
+      <li><strong>Datawrapper</strong> — Interactive choropleth map visualization</li>
+    </ul>
 
-<p>
-The county-level choropleth map reveals a pronounced geographic concentration of heart disease mortality.
-</p>
-
-<ul>
-
-<li><strong>Eastern Kentucky (Appalachia)</strong> shows the highest mortality rates, with counties such as Breathitt, Perry, Bell, Wolfe, and Whitley approaching or exceeding 300–375 deaths per 100,000.</li>
-
-<li><strong>Central Kentucky</strong> exhibits moderate mortality levels that generally align with the statewide average.</li>
-
-<li><strong>Western Kentucky</strong> displays mixed results, with isolated high-burden counties but overall lower mortality than Eastern Kentucky.</li>
-
-<li><strong>Urban and suburban counties</strong>, including Jefferson (Louisville), Fayette (Lexington), Shelby, and Madison, consistently report the lowest mortality rates.</li>
-
-</ul>
-
+    <div class="note-block">
+      <strong>Note:</strong> CDC WONDER suppresses county-level values with fewer than ten deaths to protect patient privacy. Suppressed counties were excluded from ranking analyses.
+    </div>
+  </div>
 </section>
 
-<section>
-
-<h3 class="text-bold">Top 10 Highest-Burden Counties</h3>
-
-<p>
-The ranking below highlights the counties with the highest ischemic heart disease mortality rates during the study period.
-</p>
-
-<img src="/images/cdc/top10.png?raw=true" alt="Top 10 Highest Burden Counties" class="project-image" />
-
-</section>
-
-<!-- <h2>State and National Benchmark Comparison</h2> -->
-
-<!-- <p>
-County mortality rates were compared against Kentucky and national averages to quantify the magnitude of regional disparities.
-</p> -->
-
-<!-- <img src="/images/cdc/comparision.png?raw=true"
-  alt="Kentucky vs National Comparison"
-  class="project-image"> -->
-
-<section>
-
-<h3 class="text-bold">Key Insights</h3>
-
-<div class="insight-card">
-
-<h3 class="text-bold">Regional Health Inequality</h3>
-
-<p>
-The mortality difference between the highest- and lowest-performing counties spans approximately <strong>338 deaths per 100,000</strong>, representing one of the largest county-level health disparities within Kentucky.
-</p>
-
-</div>
-
-<div class="insight-card">
-
-<h3 class="text-bold">Appalachian Disease Burden</h3>
-
-<p>
-Eastern Kentucky counties consistently experience the highest mortality rates, suggesting that geographic, socioeconomic, and healthcare access factors contribute to a concentrated regional burden of cardiovascular disease.
-</p>
-
-</div>
-
-<div class="insight-card">
-
-<h3 class="text-bold">Statewide Performance</h3>
-
-<p>
-Kentucky's average mortality rate exceeds the national benchmark by roughly 14%, indicating that cardiovascular disease remains a statewide public health priority.
-</p>
-
-</div>
-
-<div class="insight-card">
-
-<h3 class="text-bold">Targeted Public Health Opportunities</h3>
-
-<p>
-The analysis demonstrates that statewide averages conceal substantial county-level variation. Prioritizing prevention and intervention efforts in high-burden Appalachian counties could produce the greatest public health impact.
-</p>
-
-</div>
-
-</section>
-
-<!-- ## Screenshots
-
-![Dashboard](/assets/images/env-dashboard.png) -->
-
-<hr />
-
-<h2 id="back-to-home">Back to Home</h2>
-<p><a href="/">← Return Home</a></p>
+<p><a class="footer-back" href="/">← Return to Portfolio</a></p>
+<footer>
+  <div class="container">
+   
+    <p>Data sourced from CDC WONDER · Underlying Cause of Death, 2019–2024 · ICD-10 codes I20–I25</p>
+  </div>
+</footer>
 
 
       <footer class="site-footer">
