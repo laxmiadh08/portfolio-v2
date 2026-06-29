@@ -45,28 +45,28 @@ body {
 }
 
 .home-eyebrow {
-  font-size: 1rem;
+  font-size: .85rem;
   text-transform: uppercase;
   color: var(--coral);
   display: block;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .home-name {
   font-family: system-ui, -apple-system, sans-serif !important;
-  font-size: clamp(2.4rem, 6vw, 3.8rem) !important;
+  font-size: clamp(2.4rem, 6vw, 2.8rem) !important;
   font-weight: 900!important;
   color: var(--navy) !important;
   letter-spacing: -0.03em;
   line-height: 1.05;
-  margin: 0 0 20px 0 !important;
+  margin: 0 0 16px 0 !important;
 }
 
 
 .home-about {
   font-size: 1.05rem;
   color:#333;
-  line-height: 1.72;
+  line-height: 1.52;
   margin: 0 0 4px 0;
 }
 
@@ -132,9 +132,9 @@ body {
 .project-card-link:hover { gap: 8px; }
 
 .project-card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 12px;
+  background: var(--off-white);
+  border: 1px solid #f7e9dc;
+  border-radius: 4px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
