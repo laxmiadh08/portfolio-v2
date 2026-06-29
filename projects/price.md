@@ -126,7 +126,7 @@ nav a.nav-link:hover { color: var(--coral); }
 .hero-tag::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--coral); }
 .hero h1 {
   font-family: system-ui, -apple-system, sans-serif;
-  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-size: clamp(2.2rem, 5vw, 2.6rem);
   font-weight: 900;
   color: var(--white);
   letter-spacing: -0.03em;
