@@ -505,7 +505,7 @@ footer a {
   <div class="hero-inner">
     <h1>Price Transparency<br>in <em>Healthcare</em></h1>
     <p class="hero-lead">
-      Analyzing 6K rows by filtering out from 7.2 million raw hospital pricing records across three Louisville, Kentucky hospitals to expose negotiation gaps, payer disparities, and contract anomalies.
+      Analyzing 6K rows by filtering out from 7.2 million raw hospital pricing records across three Louisville, Kentucky hospitals to expose negotiation gaps and payer disparities.
     </p>
     <div class="hero-tech">
       <span class="tech-pill">Python</span>
