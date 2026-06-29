@@ -71,7 +71,7 @@ nav {
 .hero-inner {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 32px;
+  text-align:center;
 }
 .hero-tag {
   display: inline-flex;
@@ -283,7 +283,7 @@ footer p {
   color: rgba(0,0,0,0.35);
   margin-top: 8px;
 }
-.footer-back {
+/* .footer-back {
   display: inline-block;
   margin-bottom: 12px;
   font-family: system-ui, sans-serif;
@@ -294,7 +294,7 @@ footer p {
   padding: 10px 22px;
   border-radius: 6px;
   text-decoration: none;
-}
+} */
 
 /* LIST ITEMS */
 ul.findings-list {
@@ -515,10 +515,10 @@ ul.tools-list li {
   </div>
 </section>
 
- <a class="footer-back" href="/">← Return to Portfolio</a>
+
+
+<!-- FOOTER -->
 <footer>
-  <div class="container">
-   
-    <p>Data sourced from CDC WONDER · Underlying Cause of Death, 2019–2024 · ICD-10 codes I20–I25</p>
-  </div>
+  <a class="footer-back" href="/">← Return to Portfolio</a>
+  <p>Data sourced from CDC WONDER · Underlying Cause of Death, 2019–2024 · ICD-10 codes I20–I25</p>
 </footer>

@@ -106,7 +106,7 @@ nav a.nav-link:hover { color: var(--coral); }
   padding: 32px 0 32px;
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
-.hero-inner { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+.hero-inner { max-width: 1100px; margin: 0 auto; padding: 0 32px; text-align:center; }
 .hero-tag {
   display: inline-flex;
   align-items: center;
@@ -175,10 +175,8 @@ nav a.nav-link:hover { color: var(--coral); }
   margin-top:1rem!important;
 }
 .section-title-white {
-  font-family: system-ui, sans-serif;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 800;
-  letter-spacing: -0.02em;
   color: var(--white);
   margin-bottom: 16px;
 }
@@ -524,7 +522,7 @@ footer a {
 <!-- CONTEXT -->
 <section class="section-light" id="context">
   <div class="container">
-    <p style="text-align:right;">Check out: <a class="footer-back hosp-stat-val" href="https://github.com/laxmiadh08/Healthcare-Price-Transparency"  target="_blank">Github</a></p>
+    <p style="text-align:right; font-size:14px; padding-right:8px margin:0px">Check out: <a class="footer-back" href="https://github.com/laxmiadh08/Healthcare-Price-Transparency"  target="_blank">Github</a></p>
   
     <span class="section-eyebrow">Background</span>
   
@@ -571,7 +569,7 @@ footer a {
     <p class="section-body-off" style="margin-top:24px; font-size:0.92rem;">
       Challange: UofL's file used a wide format with one column per payer (379 total), requiring a melt operation to convert 97 rows into 1,940 long-format rows. Norton and Baptist used long format. I used LLM to format these files and consolidate into 13 columns for this analysis.
     </p>
-  <p>Check out code here: <a class="footer-back hosp-stat-val" href="https://github.com/laxmiadh08/Healthcare-Price-Transparency"  target="_blank">Github</a></p>
+  <p style="text-align:right; font-size:14px; padding-right:8px margin:0px">Check out code here: <a class="footer-back" href="https://github.com/laxmiadh08/Healthcare-Price-Transparency"  target="_blank">Github</a></p>
  <div class="hosp-grid">
       <div class="hosp-card">
         <div class="hosp-name">University of Louisville Health</div>
@@ -739,7 +737,7 @@ footer a {
       <div class="finding-card good">
         <div class="finding-title">CPT 470:74% Discount on Joint Replacement</div>
         <div class="finding-body">
-          CPT 470 (Major Joint Replacement - hip/knee) at Baptist Health shows the deepest payer discount in the dataset. With a gross charge of $122,570 and an average negotiated rate of $31,844, payers achieved approximately a 74% reduction from list price, the furthest dot below the diagonal.
+          CPT 470 (Major Joint Replacement - hip/knee) at Baptist Health shows the deepest payer discount in the dataset. With a gross charge of $122,570 and an average negotiated rate of $31,844, payers achieved approximately a 74% reduction from list price.
         </div>
         <div class="finding-stat">74% below gross charge</div>
       </div>
