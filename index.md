@@ -35,6 +35,7 @@ body {
   margin-bottom: 0;
   border:1px solid #d8d8d8;
 }
+.project-name
 
 .home-hero-inner {
   /* max-width: 860px; */
@@ -307,6 +308,13 @@ body {
   .home-hero { padding: 60px 20px 52px; }
   .home-section, .edu-inner, .connect-section { padding-left: 20px; padding-right: 20px; }
   .project-grid { grid-template-columns: 1fr; }
+  @media screen and (min-width: 64em) {
+    .project-name {
+        font-size: 0!important;
+        display:none !important;
+
+  }
+}
 }
 </style>
 
@@ -340,7 +348,7 @@ body {
 
 <a href="/projects/price" class="project-card-link">
   <div class="project-card">
-    <img src="/images/price-transparency/thumb.png" alt="Healthcare Pricing Dashboard">
+    <img src="/images/price-transparency/thumb1.png" alt="Healthcare Pricing Dashboard">
 
     <div class="project-card-body">
       <h3 class="project-card-title">Healthcare Pricing Disparities</h3>
