@@ -349,7 +349,7 @@ body {
 
 <a href="/projects/price" class="project-card-link">
   <div class="project-card">
-    <img src="/images/price-transparency/thumb1.png" alt="Healthcare Pricing Dashboard">
+    <!-- <img src="/images/price-transparency/thumb1.png" alt="Healthcare Pricing Dashboard"> -->
 
     <div class="project-card-body">
       <h3 class="project-card-title">Healthcare Pricing Disparities</h3>
@@ -374,7 +374,7 @@ body {
  <a class="project-card-link" href="/projects/cdc">
     <!-- Project 2 — CDC Heart Disease -->
     <div class="project-card">
-      <img src="/images/cdc/cdc-thumb.png" alt="Heart Disease Mortality Analysis">
+      <!-- <img src="/images/cdc/cdc-thumb.png" alt="Heart Disease Mortality Analysis"> -->
       <div class="project-card-body">
         <h3 class="project-card-title">County-Level Heart Disease Mortality</h3>
         <p class="project-card-desc">
