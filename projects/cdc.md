@@ -98,7 +98,7 @@ nav {
 }
 .hero h1 {
   font-family: system-ui, -apple-system, sans-serif;
-  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-size: clamp(2.2rem, 5vw, 2.6rem);
   font-weight: 900;
   color: var(--white);
   letter-spacing: -0.03em;
@@ -272,16 +272,22 @@ nav {
 }
 
 /* FOOTER */
-footer {
+/* footer {
   border-top: 1px solid rgba(0,0,0,0.08);
   padding: 32px 0;
-  background: var(--white);
-}
+
+} */
 footer p {
   font-family: system-ui, sans-serif;
   font-size: 0.85rem;
   color: rgba(0,0,0,0.35);
   margin-top: 8px;
+}
+  footer a {
+    color: var(--coral);
+    text-decoration: none;
+    font-weight: 600;
+    font-size:14px;
 }
 /* .footer-back {
   display: inline-block;
