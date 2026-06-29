@@ -149,6 +149,7 @@ body {
 }
 
 .project-card img {
+  padding:8px;
   width: 100%;
   height: 200px;
   object-fit: cover;
@@ -157,18 +158,17 @@ body {
 }
 
 .project-card-body {
-  padding: 0px;
   display: flex;
   flex-direction: column;
   flex: 1;
   gap: 8px;
-  padding:12px
+  padding:4px 12px
 }
 
 .project-card-title {
-  font-size: 1.5rem;
-  font-weight: 800!important;
-  color: var(--text-dark)!important;
+  font-size: 1.25rem;
+  font-weight: 600!important;
+  color: #333333 !important;
   margin: 0 !important;
 }
 
@@ -209,7 +209,7 @@ body {
 .edu-inner {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0px;
 }
 
 .edu-card {
@@ -230,11 +230,10 @@ body {
 }
 
 .edu-degree {
-
   font-size: 1.05rem;
   font-weight: 800;
   color:#333;
-  margin: 0 0 4px 0;
+  margin: 0px !important;
 }
 
 .edu-school {
@@ -356,7 +355,7 @@ body {
       <h3 class="project-card-title">Healthcare Pricing Disparities</h3>
 
       <p class="project-card-desc">
-        Analyzed negotiated rates, cash prices, and gross charges across 3 major Louisville hospitals — uncovering contract anomalies, payer negotiation gaps, and transparency failures across 6,681 records.
+        Analyzed negotiated rates, cash prices, and gross charges across 3 major Louisville hospitals — uncovering payer negotiation gaps, and transparency failures.
       </p>
 
       <div class="project-card-tags">
@@ -412,12 +411,10 @@ body {
   </div>
 </div>
 
-<hr class="divider">
-
 <!--  EDUCATION -->
 <div class="edu-section">
   <div class="edu-inner">
-    <h2 class="section-title" style=" margin-bottom:24px;">Education</h2>
+    <h2 class="section-title" style=" margin-bottom:14px;">Education</h2>
     <div class="edu-card">
       <div class="edu-icon">🎓</div>
       <div>
