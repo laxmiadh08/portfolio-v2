@@ -35,7 +35,9 @@ body {
   margin-bottom: 0;
   /* border:1px solid #d8d8d8; */
 }
-.project-name
+.project-name{
+  display:none!important;
+}
 
 .home-hero-inner {
   /* max-width: 860px; */
