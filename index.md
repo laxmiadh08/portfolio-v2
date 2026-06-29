@@ -392,7 +392,7 @@ body {
     </div>
 </a>
     <!-- Project 3 — placeholder -->
- <a class="project-card-link" href="https://github.com/laxmiadh08/Environment-Monitoring-App" targe="_blank">
+ <a class="project-card-link" href="https://github.com/laxmiadh08/Environment-Monitoring-App" target="_blank">
      <div class="project-card">
       <!-- <img src="/images/cdc/cdc-thumb.png" alt="Heart Disease Mortality Analysis"> -->
       <div class="project-card-body">
