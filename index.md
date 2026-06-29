@@ -134,6 +134,7 @@ body {
 .project-card {
   background: var(--off-white);
   border: 1px solid #f7e9dc;
+  border-left: 3px solid var(--coral);
   border-radius: 4px;
   overflow: hidden;
   display: flex;
@@ -166,8 +167,8 @@ body {
 }
 
 .project-card-title {
-  font-size: 1.25rem;
-  font-weight: 600!important;
+  font-size: 1.5rem;
+  font-weight: 700!important;
   color: #333333 !important;
   margin: 0 !important;
 }
@@ -214,7 +215,7 @@ body {
 
 .edu-card {
   border: 1px solid rgb(114, 114, 114);
-  border-left: 3px solid var(--coral);
+  /* border-left: 3px solid var(--coral); */
   border-radius: 10px;
   padding: 24px 28px;
   display: flex;
