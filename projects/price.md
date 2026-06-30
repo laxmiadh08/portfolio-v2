@@ -97,7 +97,7 @@ nav a.nav-link:hover { color: var(--coral); }
 
 /*HERO */
 .hero {
-  background: var(--navy);
+  background:#685e54;
   /* background-image:
     linear-gradient(to bottom, rgba(10,15,30,0.55) 0%, rgba(10,15,30,0.88) 60%, rgba(10,15,30,1) 100%),
     url('dashboard-overview.png'); */
