@@ -64,7 +64,7 @@ nav {
 
 /* HERO */
 .hero {
-  background: var(--navy);
+  background: #37332f;
   padding: 48px 0 40px;
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
